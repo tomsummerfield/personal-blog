@@ -15,15 +15,52 @@ export default function Navbar() {
     <nav id="nav" className="px-[1rem] py-6 flex justify-between items-center max-w-screen-2xl mx-auto md:px-[6rem]">
       <a className="text-[1.3rem] font-semibold text-white md:text-[20px]" href="/">Tom Summerfield</a>
       <ul className="flex space-x-[2rem]">
-        <Link href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">
-          Home
-        </Link>
-        <Link to="blogs" spy={true} smooth={true} offset={50} duration={500} className="hidden md:flex text-white text-[20px] md:text-[20px] hover:text-blue-500">
-          Blog
-        </Link>
-        <Link to="contact" spy={true} smooth={true} offset={50} duration={500} className="hidden md:flex text-white text-[20px] md:text-[20px] hover:text-blue-500">
-          Contact
-        </Link>
+      <li>
+              {slug.length > 0 ? (
+                <a href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">Home</a>
+              ) : (
+                <Link
+                  to="hero"
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="hidden md:flex text-white text-[23px] font-light"
+                >
+                  Home
+                </Link>
+              )}
+            </li>
+            <li>
+              {slug.length > 0 ? (
+                <a href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">Blogs</a>
+              ) : (
+                <Link
+                  to="blogs"
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="hidden md:flex text-white text-[23px] font-light"
+                >
+                  Blogs
+                </Link>
+              )}
+            </li>
+            <li>
+              {slug.length > 0 ? (
+                <a href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">Contact</a>
+              ) : (
+                <Link
+                  to="contact"
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="hidden md:flex text-white text-[23px] font-light"
+                >
+                  Contact
+                </Link>
+              )}
+            </li>
+
         <li onClick={() => setMobileNav(!mobileNav)}>
           <Image
             src="/hamburger-menu.png"
