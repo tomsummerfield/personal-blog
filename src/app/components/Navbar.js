@@ -24,7 +24,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="hidden md:flex text-white text-[23px] font-light"
+                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500"
                 >
                   Home
                 </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="hidden md:flex text-white text-[23px] font-light"
+                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500"
                 >
                   Blogs
                 </Link>
@@ -54,7 +54,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="hidden md:flex text-white text-[23px] font-light"
+                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500"
                 >
                   Contact
                 </Link>
