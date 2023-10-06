@@ -2,23 +2,26 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll";
+import { scrollTo } from "next/router";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-
   const [mobileNav, setMobileNav] = useState(false)
-
+  const router = usePathname();
+  const slug = router.substring("/blog/".length);
+  
   return (
-    <nav id="nav" className="px-[1rem] py-6 flex justify-between items-center">
-      <h3 className="text-[1.3rem] font-bold text-white">Tom Summerfield</h3>
-      <ul>
-        <Link  href="/" className="hidden">
+    <nav id="nav" className="px-[1rem] py-6 flex justify-between items-center max-w-screen-2xl mx-auto md:px-[6rem]">
+      <a className="text-[1.3rem] font-semibold text-white md:text-[20px]" href="/">Tom Summerfield</a>
+      <ul className="flex space-x-[2rem]">
+        <Link href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">
           Home
         </Link>
-        <Link  href="/" className="hidden">
+        <Link to="blogs" spy={true} smooth={true} offset={50} duration={500} className="hidden md:flex text-white text-[20px] md:text-[20px] hover:text-blue-500">
           Blog
         </Link>
-        <Link  href="/" className="hidden">
+        <Link to="contact" spy={true} smooth={true} offset={50} duration={500} className="hidden md:flex text-white text-[20px] md:text-[20px] hover:text-blue-500">
           Contact
         </Link>
         <li onClick={() => setMobileNav(!mobileNav)}>
@@ -27,14 +30,14 @@ export default function Navbar() {
             width="30"
             height="30"
             alt="hamburger menu"
-            className="cursor-pointer"            
+            className="cursor-pointer md:hidden"            
           />
         </li>
       </ul>
       {mobileNav && 
             <div
             id="mobile_nav"
-            className="absolute justify-center flex items-center top-0 left-0 px-[1rem] py-6 h-full w-full bg-[#132744]"
+            className="absolute justify-center flex items-center top-0 left-0 px-[1rem] py-6 h-full w-full bg-[#132744] z-50"
           >
             <span onClick={() => setMobileNav(!mobileNav)}>
               <Image
@@ -46,15 +49,54 @@ export default function Navbar() {
               />
             </span>
             <ul className="flex flex-col space-y-[4rem]">
-              <Link  href="/" className="text-white text-[23px] font-light">
-                Home
-              </Link>
-              <Link  href="/" className="text-white text-[23px] font-light">
-                Blogs
-              </Link>
-              <Link  href="/" className="text-white text-[23px] font-light">
-                Contact
-              </Link>
+            <li>
+              {slug.length > 0 ? (
+                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500">Home</a>
+              ) : (
+                <Link
+                  to="hero"
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="text-white text-[23px] font-light"
+                  onClick={()=>setMobileNav(!mobileNav)}
+                >
+                  Home
+                </Link>
+              )}
+            </li>
+            <li>
+              {slug.length > 0 ? (
+                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500">Blogs</a>
+              ) : (
+                <Link
+                  to="hero"
+                  smooth={true}
+                  offset={300}
+                  duration={500}
+                  className="text-white text-[23px] font-light"
+                  onClick={()=>setMobileNav(!mobileNav)}
+                >
+                  Blogs
+                </Link>
+              )}
+            </li>
+            <li>
+              {slug.length > 0 ? (
+                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500">Contact</a>
+              ) : (
+                <Link
+                  to="hero"
+                  smooth={true}
+                  offset={500}
+                  duration={500}
+                  className="text-white text-[23px] font-light"
+                  onClick={()=>setMobileNav(!mobileNav)}
+                >
+                  Contact
+                </Link>
+              )}
+            </li>
             </ul>
           </div>
       }
