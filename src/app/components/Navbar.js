@@ -17,14 +17,14 @@ export default function Navbar() {
       <ul className="flex space-x-[2rem]">
       <li>
               {slug.length > 0 ? (
-                <a href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">Home</a>
+                <a href="/" className="hidden md:flex text-white text-[20px] cursor-pointer font-normal md:text-[20px] hover:text-blue-500">Home</a>
               ) : (
                 <Link
                   to="hero"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500"
+                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500 cursor-pointer "
                 >
                   Home
                 </Link>
@@ -32,14 +32,14 @@ export default function Navbar() {
             </li>
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">Blogs</a>
+                <a href="/" className="hidden md:flex text-white text-[20px] cursor-pointer  font-normal md:text-[20px] hover:text-blue-500">Blogs</a>
               ) : (
                 <Link
                   to="blogs"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500"
+                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500 cursor-pointer "
                 >
                   Blogs
                 </Link>
@@ -47,14 +47,14 @@ export default function Navbar() {
             </li>
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="hidden md:flex text-white text-[20px] font-normal md:text-[20px] hover:text-blue-500">Contact</a>
+                <a href="/" className="hidden md:flex text-white text-[20px] cursor-pointer font-normal md:text-[20px] hover:text-blue-500">Contact</a>
               ) : (
                 <Link
                   to="contact"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500"
+                  className="hidden md:flex text-white text-[23px] font-light hover:text-blue-500 cursor-pointer "
                 >
                   Contact
                 </Link>
@@ -82,20 +82,20 @@ export default function Navbar() {
                 alt="Close button"
                 width="30"
                 height="30"
-                className="absolute right-[1rem] top-6"                
+                className="absolute right-[1rem] top-6 cursor-pointer "                
               />
             </span>
             <ul className="flex flex-col space-y-[4rem]">
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500">Home</a>
+                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500 cursor-pointer ">Home</a>
               ) : (
                 <Link
                   to="hero"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="text-white text-[23px] font-light"
+                  className="text-white text-[23px] font-light hover:text-blue-500 cursor-pointer "
                   onClick={()=>setMobileNav(!mobileNav)}
                 >
                   Home
@@ -104,14 +104,14 @@ export default function Navbar() {
             </li>
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500">Blogs</a>
+                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500 cursor-pointer">Blogs</a>
               ) : (
                 <Link
                   to="hero"
                   smooth={true}
                   offset={300}
                   duration={500}
-                  className="text-white text-[23px] font-light"
+                  className="text-white text-[23px] font-light hover:text-blue-500 cursor-pointer"
                   onClick={()=>setMobileNav(!mobileNav)}
                 >
                   Blogs
@@ -120,14 +120,14 @@ export default function Navbar() {
             </li>
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500">Contact</a>
+                <a href="/" className="text-white text-[23px] font-light hover:text-blue-500 cursor-pointer">Contact</a>
               ) : (
                 <Link
                   to="hero"
                   smooth={true}
                   offset={500}
                   duration={500}
-                  className="text-white text-[23px] font-light"
+                  className="text-white text-[23px] font-light hover:text-blue-500 cursor-pointer"
                   onClick={()=>setMobileNav(!mobileNav)}
                 >
                   Contact

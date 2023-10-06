@@ -20,14 +20,14 @@ export default function Footer() {
           <ul className="flex mt-[2rem] gap-[1.25rem] md:mt-0 md:gap-[3rem]">
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="text-white font-light md:text-[20px] hover:text-blue-500">HOME</a>
+                <a href="/" className="text-white font-light md:text-[20px] hover:text-blue-500 cursor-pointer">HOME</a>
               ) : (
                 <Link
                   to="hero"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="text-white font-light md:text-[20px] hover:text-blue-500"
+                  className="text-white font-light md:text-[20px] hover:text-blue-500 cursor-pointer"
                 >
                   HOME
                 </Link>
@@ -35,14 +35,14 @@ export default function Footer() {
             </li>
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="text-white font-light md:text-[20px] hover:text-blue-500">BLOGS</a>
+                <a href="/" className="text-white font-light md:text-[20px] hover:text-blue-500 cursor-pointer">BLOGS</a>
               ) : (
                 <Link
                   to="blogs"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="text-white font-light md:text-[20px] hover:text-blue-500"
+                  className="text-white font-light md:text-[20px] hover:text-blue-500 cursor-pointer"
                 >
                   BLOGS
                 </Link>
@@ -50,14 +50,14 @@ export default function Footer() {
             </li>
             <li>
               {slug.length > 0 ? (
-                <a href="/" className="text-white font-light md:text-[20px] hover:text-blue-500">CONTACT</a>
+                <a href="/" className="text-white font-light md:text-[20px] hover:text-blue-500 cursor-pointer">CONTACT</a>
               ) : (
                 <Link
                   to="contact"
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className="text-white font-light md:text-[20px] hover:text-blue-500"
+                  className="text-white font-light md:text-[20px] hover:text-blue-500 cursor-pointer"
                 >
                   CONTACT
                 </Link>
